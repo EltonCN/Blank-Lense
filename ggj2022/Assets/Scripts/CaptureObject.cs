@@ -29,7 +29,7 @@ public class CaptureObject : MonoBehaviour
 
             if(rb != null)
             {
-                rb.isKinematic = true;
+                rb.isKinematic = false;
             }
             rb = null;
             obj = null;
