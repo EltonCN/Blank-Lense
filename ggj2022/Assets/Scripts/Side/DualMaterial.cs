@@ -2,37 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Renderer))]
 public class DualMaterial : DualThing
 {
     [SerializeField] Material sideA;
     [SerializeField] Material sideB;
 
-    Renderer renderer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        renderer = GetComponent<Renderer>();
-    }
+    new Renderer renderer;
+ 
 
-    // Update is called once per frame
-
-    void OnValidate()
+    void getRenderer()
     {
         if(renderer == null)
         {
             renderer = GetComponent<Renderer>();
         }
-        renderer.material = sideA;
     }
 
     
     protected override void OnSideA()
     {
+        getRenderer();
         renderer.material = sideA;
     }
 
     protected override void OnSideB()
     {
+        getRenderer();
         renderer.material = sideB;
     }
 
