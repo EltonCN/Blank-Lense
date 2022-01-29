@@ -43,6 +43,11 @@ public class CaptureObject : MonoBehaviour
             {
                 obj = hitInfo.transform.gameObject;
 
+                if(!(obj.tag == "Capturable"))
+                {
+                    return;
+                }
+
                 originalParent = obj.transform.parent;
                 originalLayer = obj.layer;
 
