@@ -698,6 +698,7 @@ GameObject:
   - component: {fileID: 593894185}
   - component: {fileID: 593894184}
   - component: {fileID: 593894183}
+  - component: {fileID: 593894187}
   m_Layer: 0
   m_Name: PhotoCamera
   m_TagString: Untagged
@@ -806,6 +807,46 @@ Transform:
   m_Father: {fileID: 1270987183}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &593894187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593894182}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boost: 3.5
+  positionLerpTime: 0.2
+  mouseSensitivityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 5
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationLerpTime: 0.01
+  invertY: 0
 --- !u!1 &622981007
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +958,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2834c0f528b1c44d88eeb6a8674528f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Event: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  state: {fileID: 0}
   sideA: {fileID: 2100000, guid: 9b8eadc4de0544646b75ddcc43f8fd06, type: 2}
   sideB: {fileID: 2100000, guid: 801db2d997a562b4ea333aa4593ce0f0, type: 2}
 --- !u!114 &622981013
@@ -931,6 +977,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8d2c43b99e25c479d8aff41ad8fb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Event: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  state: {fileID: 0}
   sideA_Objects: []
   sideA_Scripts: []
   sideB_Objects:
@@ -2231,6 +2282,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453089846}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1532904837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7176109624721832925, guid: 83be4c72af7129d43abd13ee96b1e35b, type: 3}
+  m_PrefabInstance: {fileID: 7785573553885205517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1532904841
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532904837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: e9124fa939a2adb40835fd531d0d3a0d, type: 3}
 --- !u!1 &1547296157
 GameObject:
   m_ObjectHideFlags: 0

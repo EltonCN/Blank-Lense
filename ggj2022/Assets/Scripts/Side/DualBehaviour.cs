@@ -53,9 +53,4 @@ public class DualBehaviour : DualThing
         }
     }
 
-
-    void OnValidate()
-    {
-        OnSideA();
-    }
 }
