@@ -20,4 +20,9 @@ public class SideState : ScriptableObject
         
         sideChangeEvent.Raise();
     }
+
+    public void OnValidate()
+    {
+        sideChangeEvent.Raise();
+    }
 }

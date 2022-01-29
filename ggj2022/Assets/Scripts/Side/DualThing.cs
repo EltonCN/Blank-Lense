@@ -5,9 +5,24 @@ using UnityEngine;
 abstract public class DualThing : GameEventListener
 {
     [SerializeField]SideState state;
+    
 
+    void OnValidate()
+    {
+        if(state != null)
+        {
+            this.Event = state.sideChangeEvent;
 
-    void Awake()
+            OnSwapeSide();
+        }
+        else
+        {
+            this.Event = null;
+        }
+        
+    }
+
+    void Start()
     {
         OnSwapeSide();
 
