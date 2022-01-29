@@ -10,7 +10,7 @@ public class MouseLook : MonoBehaviour
     [SerializeField] float sensitivityY = 0.5f;
     float mouseX, mouseY;
 
-    [SerializeField] Transform playerCamera;
+    [SerializeField] List<Transform> cameras;
     [SerializeField] float xClamp = 85f;
     float xRotation = 0f;
 
@@ -23,8 +23,11 @@ public class MouseLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -xClamp, +xClamp);
         Vector3 targetRotation = transform.eulerAngles;
         targetRotation.x = xRotation;
-        playerCamera.eulerAngles = targetRotation;
 
+        foreach(Transform transform in cameras)
+        {
+            transform.eulerAngles = targetRotation;
+        }
     }
     
     public void ReceiveInput(Vector2 mouseInput)

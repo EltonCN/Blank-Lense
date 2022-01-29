@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Player/PlayerControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Input/PlayerControls.inputactions'
 
 using System;
 using System.Collections;
@@ -47,6 +47,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""d1192fbf-aa1d-490e-af76-9e1048c1eb40"",
                     ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Capture"",
+                    ""type"": ""Button"",
+                    ""id"": ""3328b8bc-92b9-46b3-97d8-2a9c6b1982ec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Swap"",
+                    ""type"": ""Button"",
+                    ""id"": ""2806325a-e742-4862-a02f-15a5be299f1f"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -139,6 +155,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""MouseY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53ead13e-2356-4d42-ab66-4ac6a96505cd"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Capture"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0eba25d0-b9a1-4f35-b468-f9c1cbbce0ac"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -151,6 +189,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GroundMovement_Jump = m_GroundMovement.FindAction("Jump", throwIfNotFound: true);
         m_GroundMovement_MouseX = m_GroundMovement.FindAction("MouseX", throwIfNotFound: true);
         m_GroundMovement_MouseY = m_GroundMovement.FindAction("MouseY", throwIfNotFound: true);
+        m_GroundMovement_Capture = m_GroundMovement.FindAction("Capture", throwIfNotFound: true);
+        m_GroundMovement_Swap = m_GroundMovement.FindAction("Swap", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -204,6 +244,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_GroundMovement_Jump;
     private readonly InputAction m_GroundMovement_MouseX;
     private readonly InputAction m_GroundMovement_MouseY;
+    private readonly InputAction m_GroundMovement_Capture;
+    private readonly InputAction m_GroundMovement_Swap;
     public struct GroundMovementActions
     {
         private @PlayerControls m_Wrapper;
@@ -212,6 +254,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_GroundMovement_Jump;
         public InputAction @MouseX => m_Wrapper.m_GroundMovement_MouseX;
         public InputAction @MouseY => m_Wrapper.m_GroundMovement_MouseY;
+        public InputAction @Capture => m_Wrapper.m_GroundMovement_Capture;
+        public InputAction @Swap => m_Wrapper.m_GroundMovement_Swap;
         public InputActionMap Get() { return m_Wrapper.m_GroundMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -233,6 +277,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MouseY.started -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMouseY;
                 @MouseY.performed -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMouseY;
                 @MouseY.canceled -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMouseY;
+                @Capture.started -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnCapture;
+                @Capture.performed -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnCapture;
+                @Capture.canceled -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnCapture;
+                @Swap.started -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnSwap;
+                @Swap.performed -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnSwap;
+                @Swap.canceled -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnSwap;
             }
             m_Wrapper.m_GroundMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -249,6 +299,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MouseY.started += instance.OnMouseY;
                 @MouseY.performed += instance.OnMouseY;
                 @MouseY.canceled += instance.OnMouseY;
+                @Capture.started += instance.OnCapture;
+                @Capture.performed += instance.OnCapture;
+                @Capture.canceled += instance.OnCapture;
+                @Swap.started += instance.OnSwap;
+                @Swap.performed += instance.OnSwap;
+                @Swap.canceled += instance.OnSwap;
             }
         }
     }
@@ -259,5 +315,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMouseX(InputAction.CallbackContext context);
         void OnMouseY(InputAction.CallbackContext context);
+        void OnCapture(InputAction.CallbackContext context);
+        void OnSwap(InputAction.CallbackContext context);
     }
 }

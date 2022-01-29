@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class Player3DMoviment : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
+    [SerializeField] Camera camera;
     Rigidbody rb;
 
     bool moving = false;
@@ -23,6 +24,10 @@ public class Player3DMoviment : MonoBehaviour
         if(moving)
         {
             Vector3 playerInput3D = new Vector3(direction.x, 0.0f, direction.y);
+            //camera.transform.rotation
+
+            
+            
             Vector3 step = speed * playerInput3D * Time.deltaTime;
             Vector3 finalPosition = step + this.transform.position;
             rb.MovePosition(finalPosition);
