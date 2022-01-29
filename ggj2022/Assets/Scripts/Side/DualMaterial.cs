@@ -7,7 +7,7 @@ public class DualMaterial : DualThing
     [SerializeField] Material sideA;
     [SerializeField] Material sideB;
 
-    Renderer renderer;
+    new Renderer renderer;
     // Start is called before the first frame update
     void Start()
     {
