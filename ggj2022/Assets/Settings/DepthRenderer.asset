@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DepthRenderer
   m_EditorClassIdentifier: 
   m_RendererFeatures:
-  - {fileID: 5019670613531360241}
-  m_RendererFeatureMap: f1fb00e1d373a945
+  - {fileID: 7677025567300432964}
+  m_RendererFeatureMap: 44b4882e14468a6a
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   shaders:
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_ShadowTransparentReceive: 1
   m_RenderingMode: 0
   m_AccurateGbufferNormals: 0
---- !u!114 &5019670613531360241
+--- !u!114 &7677025567300432964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e82b1d9513fe4d54aba2605231454443, type: 3}
-  m_Name: NewBlit
+  m_Name: Sobel
   m_EditorClassIdentifier: 
   m_Active: 1
-  blitMaterial: {fileID: 2100000, guid: 2d54083ce58eabe41854d25ecb2692d0, type: 2}
+  blitMaterial: {fileID: 2100000, guid: 342b9c06d2124ea44ad8cb2d8cb76d7b, type: 2}

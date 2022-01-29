@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Depth
-  m_Shader: {fileID: -6465566751694194690, guid: c1af24bbad9f14f41beb2c326cfb15ac, type: 3}
+  m_Name: SobelEdges
+  m_Shader: {fileID: -6465566751694194690, guid: 4aac0ecf57365af429b2abb23b8484d8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,8 +32,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_db221d6fea874642bcbb59a5c038cd9d: 0.25
+    - Vector1_0b05aa701b42479fa5c80fb263f6df86: 74.98
+    - Vector1_13062717ebd443c4a6ecac747b00d733: 0.06
+    - Vector1_4af29e4ff4444859901941a6713fb8c1: 0.001
+    - Vector1_6fcdd33ad00b42de9ff05294f631a01d: 0.92
     m_Colors:
-    - Color_294721ae49d14d4e8d5a00c6eb801a68: {r: 1, g: 1, b: 1, a: 0}
-    - Color_c868c8cf876c4dd5b2e92e319c226116: {r: 0, g: 0, b: 0, a: 0}
+    - Color_2db35b579ab54a3e84e35a24f5e66127: {r: 1, g: 1, b: 1, a: 0}
+    - Color_97bbe274774c4feab9223215ef812ddd: {r: 1, g: 1, b: 1, a: 0}
+    - Color_c03636aefa184e5caa60b47ffd53252f: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
