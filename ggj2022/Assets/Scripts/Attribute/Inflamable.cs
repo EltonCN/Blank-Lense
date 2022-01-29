@@ -13,6 +13,7 @@ public class Inflamable : MonoBehaviour
     [SerializeField] float timeToDestroy = 0.0f;
     [SerializeField] bool resetDestroyCountWithoutFire = false;
     [SerializeField] Attribute fireAttribute;
+    [SerializeField] bool showRange = false;
 
     AttributeBag bag;
     float timer;
@@ -75,6 +76,15 @@ public class Inflamable : MonoBehaviour
             {
                 bag.AddAttribute(fireAttribute);
             }
+        }
+    }
+
+     void OnDrawGizmos()
+    {
+        if(showRange)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(transform.position, propagateRange);
         }
     }
 }

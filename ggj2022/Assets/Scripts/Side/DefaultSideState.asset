@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e959e917220595c4dbe9db5bab24c56f, type: 3}
   m_Name: DefaultSideState
   m_EditorClassIdentifier: 
-  actualSide: 0
+  actualSide: 1
   sideChangeEvent: {fileID: 11400000, guid: 92d829d9cc92e9d4f9131a7dad8b2b01, type: 2}
