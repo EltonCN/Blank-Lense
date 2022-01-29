@@ -26,7 +26,7 @@ public class Player3DMoviment : MonoBehaviour
 
         Vector3 playerInput3D = new Vector3(playerInput.x, 0.0f, playerInput.y);
 
-        Vector3 step = 100f * playerInput3D * Time.deltaTime;
+        Vector3 step = 50f * playerInput3D * Time.deltaTime;
 
         Vector3 finalPosition = step + this.transform.position;
 
