@@ -12,8 +12,6 @@ abstract public class DualThing : GameEventListener
         if(state != null)
         {
             this.Event = state.sideChangeEvent;
-
-            OnSwapeSide();
         }
         else
         {
