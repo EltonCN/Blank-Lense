@@ -8,6 +8,11 @@ Texts in PT-BR and EN-US.
 - SHIFT to change the lenses 
 - Mouse for camera look
 
+![Capture1](Capture1.png)
+
+![Capture2](Capture2.png)
+
+
 # Authors
 
 - [EltonCN](https://github.com/EltonCN)
