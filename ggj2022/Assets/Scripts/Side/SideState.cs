@@ -25,4 +25,12 @@ public class SideState : ScriptableObject
     {
         sideChangeEvent.Raise();
     }
+
+    public void SetSide(Side side)
+    {
+        if(side != this.actualSide)
+        {
+            ToggleSide();
+        }
+    }
 }
