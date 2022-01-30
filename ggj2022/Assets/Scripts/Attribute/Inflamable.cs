@@ -12,7 +12,7 @@ public class Inflamable : MonoBehaviour
     [SerializeField] bool destroys = false;
     [SerializeField] float timeToDestroy = 0.0f;
     [SerializeField] bool resetDestroyCountWithoutFire = false;
-    [SerializeField] Attribute fireAttribute;
+    [SerializeField] GameAttribute fireAttribute;
     [SerializeField] bool showRange = false;
 
     AttributeBag bag;

@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(AttributeBag))]
 public class DualAttribute : DualThing
 {
-    [SerializeField] List<Attribute> sideA;
-    [SerializeField] List<Attribute> sideB;
+    [SerializeField] List<GameAttribute> sideA;
+    [SerializeField] List<GameAttribute> sideB;
 
     AttributeBag bag;
  
@@ -35,17 +35,17 @@ public class DualAttribute : DualThing
         addAllAttributes(sideB);
     }
 
-    void removeAllAttributes(List<Attribute> attributes)
+    void removeAllAttributes(List<GameAttribute> attributes)
     {
-        foreach(Attribute a in attributes)
+        foreach(GameAttribute a in attributes)
         {
             bag.RemoveAttribute(a);
         }
     }
 
-    void addAllAttributes(List<Attribute> attributes)
+    void addAllAttributes(List<GameAttribute> attributes)
     {
-        foreach(Attribute a in attributes)
+        foreach(GameAttribute a in attributes)
         {
             bag.AddAttribute(a);
         }

@@ -5,10 +5,10 @@ using UnityEngine.Events;
 
 public class AttributeBag : MonoBehaviour
 {
-    [SerializeField] List<Attribute> attributes;
+    [SerializeField] List<GameAttribute> attributes;
     public UnityEvent OnAttributeChange;
 
-    public void AddAttribute(Attribute attribute)
+    public void AddAttribute(GameAttribute attribute)
     {
         if(!attributes.Contains(attribute))
         {
@@ -18,12 +18,12 @@ public class AttributeBag : MonoBehaviour
         }
     }
 
-    public bool HaveAttribute(Attribute attribute)
+    public bool HaveAttribute(GameAttribute attribute)
     {
         return attributes.Contains(attribute);
     }
 
-    public void RemoveAttribute(Attribute attribute)
+    public void RemoveAttribute(GameAttribute attribute)
     {
         if(attributes.Contains(attribute))
         {

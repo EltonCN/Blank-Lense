@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody))]
 public class Player3DMoviment : MonoBehaviour
 {
-    [SerializeField] float speed = 1f;
-    [SerializeField] Camera camera;
-    Rigidbody rb;
+    [SerializeField] float speed = 5f;
+    [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] new Camera camera;
+    [SerializeField] Rigidbody player;
 
     bool moving = false;
     Vector2 direction;
@@ -16,7 +16,6 @@ public class Player3DMoviment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -24,13 +23,19 @@ public class Player3DMoviment : MonoBehaviour
         if(moving)
         {
             Vector3 playerInput3D = new Vector3(direction.x, 0.0f, direction.y);
-            //camera.transform.rotation
 
-            
-            
+            Quaternion rotation = camera.transform.rotation;
+            Vector3 angles = rotation.eulerAngles;
+            angles.x = 0;
+            angles.z = 0;
+            rotation = Quaternion.Euler(angles);
+
+            playerInput3D = camera.transform.rotation * playerInput3D;
+            playerInput3D.y = 0;
+
             Vector3 step = speed * playerInput3D * Time.deltaTime;
             Vector3 finalPosition = step + this.transform.position;
-            rb.MovePosition(finalPosition);
+            player.MovePosition(finalPosition);
         }
         
     }
@@ -46,7 +51,16 @@ public class Player3DMoviment : MonoBehaviour
         {
             moving = false;
         }
+    }
 
-        
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            Vector3 velocity = player.velocity;
+            velocity.y = jumpSpeed;
+
+            player.velocity = velocity;
+        }
     }
 }

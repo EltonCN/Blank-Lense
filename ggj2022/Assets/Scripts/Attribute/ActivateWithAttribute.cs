@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(AttributeBag))]
 public class ActivateWithAttribute : MonoBehaviour
 {
-    [SerializeField] Attribute attribute;
+    [SerializeField] GameAttribute attribute;
     [SerializeField] List<MonoBehaviour> scripts;
     [SerializeField] List<GameObject> objects;
 
