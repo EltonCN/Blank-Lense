@@ -47,7 +47,7 @@ MonoBehaviour:
   entries:
   - Language: Portuguese
     Text: 
-    Object: {fileID: 21300000, guid: 056e035dca7565a4dbb9fbc4a777f9cf, type: 3}
+    Object: {fileID: 21300000, guid: b28990d259a99e84ba9b2528cfd92e7c, type: 3}
   - Language: English
     Text: 
     Object: {fileID: 21300000, guid: 44287d3e300275f44b159d0a24bd15ca, type: 3}
