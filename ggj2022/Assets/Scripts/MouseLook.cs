@@ -12,16 +12,17 @@ public class MouseLook : MonoBehaviour
 
     [SerializeField] List<Transform> cameras;
     [SerializeField] float xClamp = 85f;
+    [SerializeField] Transform playerTransform;
     float xRotation = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up, mouseX * Time.deltaTime);
+        playerTransform.Rotate(Vector3.up, mouseX * Time.deltaTime);
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -xClamp, +xClamp);
-        Vector3 targetRotation = transform.eulerAngles;
+        Vector3 targetRotation = playerTransform.eulerAngles;
         targetRotation.x = xRotation;
 
         foreach(Transform transform in cameras)

@@ -3,9 +3,9 @@ using UnityEditor;
 using System.IO;
 
 [CreateAssetMenu(menuName ="Blank/Attribute")]
-public class Attribute : ScriptableObject
+public class GameAttribute : ScriptableObject
 {
-    public Attribute inverse;
+    public GameAttribute inverse;
 
     void Awake()
     {
