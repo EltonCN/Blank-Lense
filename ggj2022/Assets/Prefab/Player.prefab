@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 73121571715472607}
   - component: {fileID: 73121571715472606}
   - component: {fileID: 73121571715472605}
+  - component: {fileID: 1602207556550088436}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -39,6 +40,7 @@ Transform:
   - {fileID: 7312057837914596861}
   - {fileID: 7312057837446559422}
   - {fileID: 7312057838022522448}
+  - {fileID: 5460137646395545129}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,11 +120,35 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Player3DMoviment, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e0c5805d-d2d6-4b51-b9e4-c817ae82b1cb
     m_ActionName: GroundMovement/HorizontalMovement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Player3DMoviment, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4860094d-b099-46ca-92dc-304af4e12585
     m_ActionName: GroundMovement/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -151,10 +177,10 @@ MonoBehaviour:
     m_ActionName: GroundMovement/Capture[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 110679d3fcf787e4fa6d72b5b942f787, type: 2}
-        m_TargetAssemblyTypeName: SideState, Assembly-CSharp
-        m_MethodName: ToggleSide
-        m_Mode: 1
+      - m_Target: {fileID: 1602207556550088436}
+        m_TargetAssemblyTypeName: ButtonEvent, Assembly-CSharp
+        m_MethodName: OnButton
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -237,6 +263,87 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73121571715472595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd4deba6f1e82d45883eb240764f462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a372285f1048808449637a22c1239534, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  objects:
+  - {fileID: 7312057838022522450}
+--- !u!114 &1602207556550088436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73121571715472595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c748ba25e2e3b4ba68a193ab1dc56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  releaseEvent: {fileID: 11400000, guid: b740355f89f765b45945e29155afc1f8, type: 2}
+--- !u!1 &1479257065473139495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5460137646395545129}
+  - component: {fileID: 688934517903312390}
+  - component: {fileID: 4966392587431258260}
+  m_Layer: 0
+  m_Name: CameraListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5460137646395545129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479257065473139495}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 73121571715472598}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &688934517903312390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479257065473139495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd4deba6f1e82d45883eb240764f462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a372285f1048808449637a22c1239534, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  objects:
+  - {fileID: 7312057837914596849}
+--- !u!114 &4966392587431258260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479257065473139495}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bd4deba6f1e82d45883eb240764f462, type: 3}
@@ -463,6 +570,7 @@ GameObject:
   - component: {fileID: 7312057837914596863}
   - component: {fileID: 7312057837914596848}
   - component: {fileID: 7312057837914596860}
+  - component: {fileID: 8428166318940483321}
   m_Layer: 0
   m_Name: PhotoCamera
   m_TagString: Untagged
@@ -590,6 +698,34 @@ MonoBehaviour:
       - m_Target: {fileID: 7312057837914596848}
         m_TargetAssemblyTypeName: CaptureObject, Assembly-CSharp
         m_MethodName: Capture
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8428166318940483321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312057837914596849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac9a68fbd53ffb418c54958a52bcf98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b740355f89f765b45945e29155afc1f8, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 110679d3fcf787e4fa6d72b5b942f787, type: 2}
+        m_TargetAssemblyTypeName: SideState, Assembly-CSharp
+        m_MethodName: ToggleSide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

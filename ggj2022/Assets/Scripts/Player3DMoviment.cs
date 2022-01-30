@@ -7,7 +7,7 @@ public class Player3DMoviment : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpSpeed = 5f;
-    [SerializeField] Camera camera;
+    [SerializeField] new Camera camera;
     [SerializeField] Rigidbody player;
 
     bool moving = false;
