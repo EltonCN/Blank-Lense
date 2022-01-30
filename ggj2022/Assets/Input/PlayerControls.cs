@@ -73,6 +73,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""62c91caf-9349-43ca-b06d-b978ee9c443f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -196,6 +204,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""EnterCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6c3704d-c00a-46a5-8519-545ff3ff1076"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -211,6 +230,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GroundMovement_Capture = m_GroundMovement.FindAction("Capture", throwIfNotFound: true);
         m_GroundMovement_Swap = m_GroundMovement.FindAction("Swap", throwIfNotFound: true);
         m_GroundMovement_EnterCamera = m_GroundMovement.FindAction("EnterCamera", throwIfNotFound: true);
+        m_GroundMovement_Menu = m_GroundMovement.FindAction("Menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -267,6 +287,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_GroundMovement_Capture;
     private readonly InputAction m_GroundMovement_Swap;
     private readonly InputAction m_GroundMovement_EnterCamera;
+    private readonly InputAction m_GroundMovement_Menu;
     public struct GroundMovementActions
     {
         private @PlayerControls m_Wrapper;
@@ -278,6 +299,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Capture => m_Wrapper.m_GroundMovement_Capture;
         public InputAction @Swap => m_Wrapper.m_GroundMovement_Swap;
         public InputAction @EnterCamera => m_Wrapper.m_GroundMovement_EnterCamera;
+        public InputAction @Menu => m_Wrapper.m_GroundMovement_Menu;
         public InputActionMap Get() { return m_Wrapper.m_GroundMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -308,6 +330,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @EnterCamera.started -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnEnterCamera;
                 @EnterCamera.performed -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnEnterCamera;
                 @EnterCamera.canceled -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnEnterCamera;
+                @Menu.started -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMenu;
+                @Menu.performed -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMenu;
+                @Menu.canceled -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMenu;
             }
             m_Wrapper.m_GroundMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -333,6 +358,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @EnterCamera.started += instance.OnEnterCamera;
                 @EnterCamera.performed += instance.OnEnterCamera;
                 @EnterCamera.canceled += instance.OnEnterCamera;
+                @Menu.started += instance.OnMenu;
+                @Menu.performed += instance.OnMenu;
+                @Menu.canceled += instance.OnMenu;
             }
         }
     }
@@ -346,5 +374,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnCapture(InputAction.CallbackContext context);
         void OnSwap(InputAction.CallbackContext context);
         void OnEnterCamera(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
     }
 }

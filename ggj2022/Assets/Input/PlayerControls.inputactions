@@ -60,6 +60,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "62c91caf-9349-43ca-b06d-b978ee9c443f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -181,6 +189,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "EnterCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d6c3704d-c00a-46a5-8519-545ff3ff1076",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
